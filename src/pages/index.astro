@@ -1,17 +1,904 @@
 ---
+import logoSquare from '../../logo.png';
+import logoTransparent from '../../logo_withoutbg.png';
+import aiAutomationImage from '../../AIautomation.png';
+import growthStrategyImage from '../../growthstrategy.png';
+import aiChatSolutionImage from '../../AIchatsolution.png';
+import websiteDevelopmentImage from '../../websitedevelopment.png';
+import customAiToolsImage from '../../customAItools.png';
 
+const services = [
+  {
+    title: "AI Automation",
+    description: "Automate repetitive work, routing, follow-ups, and operations with reliable AI workflows.",
+    accent: "blue",
+    image: aiAutomationImage,
+  },
+  {
+    title: "Growth Strategy",
+    description: "Find the highest-leverage moves across funnel, offer, content, and conversion.",
+    accent: "violet",
+    image: growthStrategyImage,
+  },
+  {
+    title: "AI Chat Solutions",
+    description: "Deploy smart assistants that support customers, qualify leads, and reduce response time.",
+    accent: "cyan",
+    image: aiChatSolutionImage,
+  },
+  {
+    title: "Website Development",
+    description: "Build clean, fast, responsive websites that look premium and convert better.",
+    accent: "indigo",
+    image: websiteDevelopmentImage,
+  },
+  {
+    title: "Custom AI Tools",
+    description: "Create tailored internal tools and client-facing systems for your exact workflow.",
+    accent: "emerald",
+    image: customAiToolsImage,
+  },
+];
+
+const approach = [
+  {
+    step: "01",
+    title: "Understand",
+    description: "We map your business, pain points, and growth goals before suggesting anything.",
+  },
+  {
+    step: "02",
+    title: "Build",
+    description: "We design sharp systems and pages that are simple to use and easy to scale.",
+  },
+  {
+    step: "03",
+    title: "Grow",
+    description: "We refine the system continuously so performance keeps improving over time.",
+  },
+];
+
+const highlights = [
+  "Transparent process",
+  "Honest communication",
+  "Measurable impact",
+  "Focused on real results",
+];
+
+const contact = [
+  { label: "Primary Line", value: "8006440620", href: "tel:8006440620" },
+  { label: "Secondary Line", value: "8979056873", href: "tel:8979056873" },
+];
+
+const footerLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Instagram", href: "#" },
+];
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GrowthHackAI | AI Solutions. Real Growth.</title>
+    <link rel="icon" type="image/png" href={logoSquare.src} />
+    <meta
+      name="description"
+      content="GrowthHackAI helps businesses automate, optimize, and scale with sleek AI-powered systems and high-converting websites."
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="header-brand" href="#top" aria-label="GrowthHackAI home">
+        <img class="header-logo" src={logoTransparent.src} alt="" />
+        <div>
+          <strong>GrowthHackAI</strong>
+          <span>Helping businesses Build, Automate and Scale</span>
+        </div>
+      </a>
+
+      <a class="header-cta button button-secondary" href="#contact">Book a Call</a>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" id="top">
+        <div class="background-orb orb-a"></div>
+        <div class="background-orb orb-b"></div>
+        <div class="grid-glow"></div>
+        <div class="hero-card">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <div class="brand-row">
+                <img class="brand-image" src={logoTransparent.src} alt="GrowthHackAI logo" />
+                <p class="eyebrow">GrowthHackAI Agency</p>
+              </div>
+
+              <h1>Websites, Automation Tools, AI systems. Built for your requirements.</h1>
+
+              <p class="lede">
+                We design and develop clean, responsive websites, web projects, and AI-powered systems that fit your goals and deliver results.
+              </p>
+
+              <div class="cta-row">
+                <a class="button button-primary" href="#services">Explore Services</a>
+                <a class="button button-secondary" href="#contact">Book a Call</a>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-label="GrowthHackAI preview">
+              <div class="logo-panel">
+                <div class="logo-chip">
+                  <img class="logo-chip-image" src={logoSquare.src} alt="GrowthHackAI logo mark" />
+                </div>
+                <div class="logo-copy">
+                  <span class="eyebrow">Build. Automate. Scale.</span>
+                </div>
+              </div>
+
+              <div class="hero-metrics" aria-label="Key benefits">
+                <div><strong>Fast</strong><span>Build Cycles</span></div>
+                <div><strong>Smart</strong><span>AI Integration</span></div>
+                <div><strong>Reliable</strong><span>Systems and Workflows</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="section-heading">
+          <p>What we do</p>
+          <h2>Built to design, develop, and deliver.</h2>
+        </div>
+
+        <div class="service-grid">
+          {services.map((service) => (
+            <article class={`service-card service-${service.accent}`}>
+              <img class="service-image" src={service.image.src} alt={service.title} loading="lazy" />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section section-split">
+        <div class="section-heading left">
+          <p>Our approach</p>
+          <h2>Simple process. Strong execution.</h2>
+        </div>
+
+        <div class="approach-grid">
+          {approach.map((item) => (
+            <article class="approach-card">
+              <span>{item.step}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="trust-banner">
+        <p>
+          We believe in long-term <strong>partnerships</strong>, not shortcuts.
+        </p>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading left compact">
+          <p>Contact us</p>
+          <h2>Ready to build something solid for your business?</h2>
+        </div>
+
+        <p class="contact-lede">Tap any number below to call us directly.</p>
+
+        <div class="contact-grid">
+          {contact.map((item) => (
+            <a class="contact-card" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+              <span class="contact-action">Tap to Call</span>
+            </a>
+          ))}
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-brand">
+            <img class="footer-logo" src={logoSquare.src} alt="GrowthHackAI logo" />
+            <div>
+              <strong>GrowthHackAI</strong>
+              <p>AI solutions, automation, and modern growth systems.</p>
+            </div>
+          </div>
+
+          <div class="footer-meta">
+            <p>© 2026 GrowthHackAI. All rights reserved.</p>
+            <nav aria-label="Footer">
+              {footerLinks.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </nav>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
 </html>
+
+<style>
+  :global(:root) {
+    color-scheme: dark;
+    --bg: #04070f;
+    --panel: rgba(9, 15, 29, 0.72);
+    --panel-strong: rgba(8, 13, 25, 0.92);
+    --line: rgba(77, 156, 255, 0.34);
+    --text: rgba(247, 250, 255, 0.96);
+    --muted: rgba(209, 220, 240, 0.72);
+    --blue: #2e7dff;
+    --cyan: #43d6ff;
+    --violet: #9b7cff;
+    --emerald: #3af0a0;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(46, 125, 255, 0.18), transparent 28%),
+      radial-gradient(circle at 80% 0%, rgba(75, 115, 255, 0.12), transparent 24%),
+      linear-gradient(180deg, #03050b 0%, #070b14 60%, #03050b 100%);
+  }
+
+  :global(body) {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at top, rgba(36, 111, 255, 0.16), transparent 28%),
+      linear-gradient(180deg, #02040a 0%, #060a13 100%);
+  }
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .page-shell {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: min(1120px, calc(100vw - 2rem));
+    margin: 0 auto;
+    padding: 0.9rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    backdrop-filter: blur(18px);
+  }
+
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin-inline: -1rem;
+    border-radius: 999px;
+    background: rgba(5, 10, 19, 0.58);
+    border: 1px solid rgba(84, 146, 255, 0.16);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.24);
+    z-index: -1;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+  }
+
+  .header-logo {
+    width: 2.6rem;
+    height: 2.6rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    box-shadow: 0 10px 24px rgba(20, 89, 255, 0.18);
+  }
+
+  .header-brand strong,
+  .header-brand span {
+    display: block;
+    line-height: 1.1;
+  }
+
+  .header-brand strong {
+    font-size: 0.98rem;
+  }
+
+  .header-brand span {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .hero,
+  .section,
+  .trust-banner {
+    width: min(1220px, calc(100vw - 2rem));
+    margin: 0 auto;
+  }
+
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 5.5rem);
+    display: grid;
+    place-items: center;
+    padding: 2rem 0 3.5rem;
+  }
+
+  .background-orb,
+  .grid-glow {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .orb-a,
+  .orb-b {
+    border-radius: 999px;
+    filter: blur(12px);
+    opacity: 0.9;
+    animation: float 14s ease-in-out infinite;
+  }
+
+  .orb-a {
+    inset: 18% auto auto -8%;
+    width: 20rem;
+    height: 20rem;
+    background: radial-gradient(circle, rgba(46, 125, 255, 0.35), transparent 65%);
+  }
+
+  .orb-b {
+    inset: auto -8% 8% auto;
+    width: 24rem;
+    height: 24rem;
+    background: radial-gradient(circle, rgba(67, 214, 255, 0.18), transparent 68%);
+    animation-delay: -5s;
+  }
+
+  .grid-glow {
+    inset: 0;
+    background:
+      radial-gradient(circle at 82% 10%, rgba(70, 140, 255, 0.4) 0 1px, transparent 1px) 0 0 / 16px 16px,
+      linear-gradient(transparent 0 0);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 20%);
+    opacity: 0.18;
+  }
+
+  .hero-card,
+  .service-card,
+  .approach-card,
+  .trust-banner,
+  .contact-card,
+  .highlight-pill {
+    border: 1px solid rgba(84, 146, 255, 0.28);
+    background: linear-gradient(180deg, rgba(11, 18, 34, 0.78), rgba(5, 10, 19, 0.9));
+    backdrop-filter: blur(18px);
+    box-shadow:
+      0 0 0 1px rgba(107, 163, 255, 0.06) inset,
+      0 24px 80px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-card {
+    width: min(100%, 980px);
+    border-radius: 32px;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    inset: auto -10% -60% -10%;
+    height: 12rem;
+    background: radial-gradient(circle, rgba(46, 125, 255, 0.2), transparent 65%);
+    filter: blur(16px);
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+    gap: clamp(1rem, 2.4vw, 2rem);
+    align-items: center;
+  }
+
+  .hero-copy,
+  .hero-visual {
+    min-width: 0;
+  }
+
+  .brand-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .brand-image {
+    width: clamp(4rem, 9vw, 5.25rem);
+    height: auto;
+    display: block;
+    border-radius: 1.25rem;
+    filter: drop-shadow(0 18px 28px rgba(20, 89, 255, 0.22));
+  }
+
+  .eyebrow,
+  .section-heading p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.34em;
+    color: #4fa1ff;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+    max-width: 12ch;
+    text-wrap: balance;
+  }
+
+  .lede {
+    margin-top: 1.25rem;
+    max-width: 52ch;
+    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
+  }
+
+  .button {
+    border-radius: 999px;
+    padding: 0.9rem 1.3rem;
+    font-weight: 700;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
+  }
+
+  .button:hover,
+  .service-card:hover,
+  .approach-card:hover,
+  .contact-card:hover,
+  .highlight-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: white;
+    box-shadow: 0 16px 32px rgba(46, 125, 255, 0.24);
+  }
+
+  .button-secondary {
+    border: 1px solid rgba(122, 176, 255, 0.34);
+    background: rgba(8, 14, 27, 0.72);
+  }
+
+  .hero-metrics {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(110px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .hero-metrics div {
+    border-radius: 20px;
+    padding: 1rem 1.1rem;
+    background: rgba(5, 9, 18, 0.7);
+    border: 1px solid rgba(98, 152, 255, 0.18);
+  }
+
+  .hero-metrics strong,
+  .approach-card span,
+  .contact-card span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: #4fa1ff;
+  }
+
+  .hero-metrics span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+  }
+
+  .hero-visual {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .logo-panel {
+    border-radius: 28px;
+    padding: 1.2rem;
+    background:
+      radial-gradient(circle at top right, rgba(67, 214, 255, 0.14), transparent 34%),
+      linear-gradient(180deg, rgba(12, 19, 34, 0.82), rgba(7, 12, 22, 0.92));
+    border: 1px solid rgba(84, 146, 255, 0.22);
+    box-shadow:
+      0 0 0 1px rgba(107, 163, 255, 0.06) inset,
+      0 24px 80px rgba(0, 0, 0, 0.4);
+  }
+
+  .logo-chip {
+    display: grid;
+    place-items: center;
+    border-radius: 24px;
+    min-height: 16rem;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(67, 214, 255, 0.18), transparent 30%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(5, 10, 19, 0.2));
+  }
+
+  .logo-chip-image {
+    width: min(100%, 12rem);
+    height: auto;
+    display: block;
+    border-radius: 1.6rem;
+  }
+
+  .logo-copy {
+    margin-top: 1rem;
+  }
+
+  .logo-copy p {
+    margin-top: 0.45rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .section {
+    padding: 1.5rem 0 0;
+  }
+
+  .section-heading {
+    text-align: center;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .section-heading.left {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .section-heading.compact {
+    margin-bottom: 1rem;
+  }
+
+  .section-heading h2 {
+    margin-top: 0.45rem;
+    font-size: clamp(1.7rem, 3.8vw, 3rem);
+    letter-spacing: -0.05em;
+  }
+
+  .service-grid,
+  .approach-grid,
+  .contact-grid,
+  .highlights {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .service-card {
+    border-radius: 24px;
+    padding: 1rem;
+    min-height: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .service-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: rgba(6, 12, 24, 0.48);
+    padding: 0.35rem;
+    border-radius: 16px;
+    border: 1px solid rgba(84, 146, 255, 0.2);
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .service-card p,
+  .approach-card p {
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .service-blue {
+    box-shadow: 0 24px 60px rgba(46, 125, 255, 0.08);
+  }
+  .service-violet {
+    box-shadow: 0 24px 60px rgba(155, 124, 255, 0.08);
+  }
+  .service-cyan {
+    box-shadow: 0 24px 60px rgba(67, 214, 255, 0.08);
+  }
+  .service-indigo {
+    box-shadow: 0 24px 60px rgba(92, 121, 255, 0.08);
+  }
+  .service-emerald {
+    box-shadow: 0 24px 60px rgba(58, 240, 160, 0.08);
+  }
+
+  .section-split {
+    margin-top: 1rem;
+  }
+
+  .approach-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .approach-card {
+    border-radius: 24px;
+    padding: 1.35rem;
+    min-height: 14rem;
+  }
+
+  .approach-card span {
+    margin-bottom: 0.8rem;
+  }
+
+  .approach-card h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+  }
+
+  .trust-banner {
+    margin-top: 1rem;
+    border-radius: 22px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+
+  .trust-banner p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+  }
+
+  .trust-banner strong {
+    color: #4fa1ff;
+  }
+
+  .contact-section {
+    padding-bottom: 4rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .contact-card {
+    border-radius: 24px;
+    padding: 1.1rem 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    justify-items: start;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
+  }
+
+  .contact-card strong {
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+    letter-spacing: 0.02em;
+  }
+
+  .contact-lede {
+    margin: 0 0 0.85rem;
+    color: var(--muted);
+  }
+
+  .contact-action {
+    margin-top: 0.25rem;
+    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9fd0ff;
+    border: 1px solid rgba(107, 176, 255, 0.32);
+    background: rgba(16, 43, 77, 0.4);
+  }
+
+  .site-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid rgba(84, 146, 255, 0.16);
+    padding-top: 1.2rem;
+    display: grid;
+    gap: 1rem;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .footer-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(20, 89, 255, 0.16);
+  }
+
+  .footer-brand strong {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .footer-brand p,
+  .footer-meta p {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .footer-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-meta nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-meta a {
+    color: var(--muted);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  @media (max-width: 1240px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 1080px) {
+
+    .service-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .approach-grid,
+    .contact-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-header {
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 0.7rem;
+    }
+
+    .site-header::before {
+      border-radius: 24px;
+    }
+
+    .header-cta {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero {
+      align-items: start;
+      padding-top: 1rem;
+    }
+
+    .hero-card {
+      border-radius: 24px;
+    }
+
+    h1 {
+      max-width: 14ch;
+    }
+
+    .brand-row {
+      grid-template-columns: 1fr;
+    }
+
+    .brand-image {
+      width: 4.75rem;
+    }
+
+    .cta-row .button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-metrics,
+    .service-grid,
+    .approach-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .logo-chip {
+      min-height: 12rem;
+    }
+
+    .footer-meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
